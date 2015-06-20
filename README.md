@@ -13,8 +13,4 @@ java -jar fruit-basket.jar basket.csv
 
 III) Run Application with TestNG (Required Java 1.6 or later and Maven 3 or later)
 --------------------------------------------
-mvn clean compile test -DFruitBasketTest -Dcsv=src/test/resources/basket.csv
-OR
-mvn clean compile test -DFruitBasketTest -Dcsv=basket.csv
-OR
 mvn clean compile test -DFruitBasketTest -Dcsv=C:/test/basket.csv
