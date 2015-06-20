@@ -1,2 +1,2 @@
-# Fruit Basket Application Based on CSV file
+# Fruit Basket Application
 Fruit Basket Application Based on CSV file
