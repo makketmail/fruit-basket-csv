@@ -22,11 +22,11 @@ public class FruitBasketServiceTest
 
     // Total number of fruit: 123
     @Test
-    public void testFindAllFriuts()
+    public void testFindAllFruits()
     {
         FruitBasketService fruitBasketService = new CsvFruitBasketService(TEST_CSV_FILE_PATH);
         Assert.assertNotNull(fruitBasketService);
-        List<Fruit> fruits = fruitBasketService.findAllFriuts();
+        List<Fruit> fruits = fruitBasketService.findAllFruits();
 
         System.out.println("Total " + fruits.size() + " fruits found");
 
@@ -43,7 +43,7 @@ public class FruitBasketServiceTest
     {
         FruitBasketService fruitBasketService = new CsvFruitBasketService(TEST_CSV_FILE_PATH);
         Assert.assertNotNull(fruitBasketService);
-        // int total = fruitBasketService.countAllFriuts();
+        // int total = fruitBasketService.countAllFruits();
         // System.out.println("Total number of fruit: " + total);
     }
 

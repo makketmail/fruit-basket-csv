@@ -26,7 +26,7 @@ public class FruitBasketApplication
     {
         FruitBasketService fruitBasketService = new CsvFruitBasketService(csvPath);
 
-        List<Fruit> fruits = fruitBasketService.findAllFriuts();
+        List<Fruit> fruits = fruitBasketService.findAllFruits();
 
         System.out.println("Total " + fruits.size() + " fruits found");
 
@@ -36,7 +36,7 @@ public class FruitBasketApplication
 
         }
 
-        int countOfFruits=fruitBasketService.countAllFriuts();
+        int countOfFruits=fruitBasketService.countAllFruits();
         System.out.println("Total number of fruits " + countOfFruits);
     }
 }

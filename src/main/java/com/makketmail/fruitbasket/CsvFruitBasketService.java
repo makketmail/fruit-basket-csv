@@ -46,13 +46,13 @@ public class CsvFruitBasketService implements FruitBasketService
         throw new UnsupportedOperationException( "Not impemented yet" );
     }
 
-    public List< Fruit > findAllFriuts()
+    public List< Fruit > findAllFruits()
     {
         List< Fruit > availableFruits = readCSV();
         return availableFruits;
     }
 
-    public List< Fruit > findAllFriutsByName( String name )
+    public List< Fruit > findAllFruitsByName( String name )
     {
         List< Fruit > availableFruits = readCSV();
         List< Fruit > requestedFruits = new ArrayList< Fruit >();
@@ -68,7 +68,7 @@ public class CsvFruitBasketService implements FruitBasketService
         return requestedFruits;
     }
 
-    public Set< String > findAllFriutsTypes()
+    public Set< String > findAllFruitsTypes()
     {
         List< Fruit > availableFruits = readCSV();
 
@@ -83,7 +83,7 @@ public class CsvFruitBasketService implements FruitBasketService
         return uniqueFruitNamesSet;
     }
 
-    public List< Fruit > findAllFriutsByEexpiresInDays( String name, Integer expiresIn )
+    public List< Fruit > findAllFruitsByEexpiresInDays( String name, Integer expiresIn )
     {
         List< Fruit > availableFruits = readCSV();
         List< Fruit > requestedFruits = new ArrayList< Fruit >();
@@ -98,24 +98,24 @@ public class CsvFruitBasketService implements FruitBasketService
         return requestedFruits;
     }
 
-    public Integer countAllFriutsByName( String name )
+    public Integer countAllFruitsByName( String name )
     {
-        return findAllFriutsByName( name ).size();
+        return findAllFruitsByName( name ).size();
     }
 
-    public Integer countAllFriuts()
+    public Integer countAllFruits()
     {
-        return findAllFriuts().size();
+        return findAllFruits().size();
     }
 
-    public Integer countAllFriutsTypes()
+    public Integer countAllFruitsTypes()
     {
-        return findAllFriutsTypes().size();
+        return findAllFruitsTypes().size();
     }
 
-    public Integer countAllFriutsByEexpiresInDays( String name, Integer expiresIn )
+    public Integer countAllFruitsByEexpiresInDays( String name, Integer expiresIn )
     {
-        return findAllFriutsByEexpiresInDays( name, expiresIn ).size();
+        return findAllFruitsByEexpiresInDays( name, expiresIn ).size();
     }
 
     private List< Fruit > readCSV()

@@ -9,19 +9,19 @@ public interface FruitBasketService
 {
     public void addfruit() throws FruitBasketException;
 
-    public List< Fruit > findAllFriuts();
+    public List< Fruit > findAllFruits();
 
-    public List< Fruit > findAllFriutsByName( String name );
+    public List< Fruit > findAllFruitsByName( String name );
 
-    public Set< String > findAllFriutsTypes();
+    public Set< String > findAllFruitsTypes();
 
-    public List< Fruit > findAllFriutsByEexpiresInDays( String name, Integer expiresIn );
+    public List< Fruit > findAllFruitsByEexpiresInDays( String name, Integer expiresIn );
 
-    public Integer countAllFriuts();
+    public Integer countAllFruits();
 
-    public Integer countAllFriutsByName( String name );
+    public Integer countAllFruitsByName( String name );
 
-    public Integer countAllFriutsTypes();
+    public Integer countAllFruitsTypes();
 
-    public Integer countAllFriutsByEexpiresInDays( String name, Integer expiresIn );
+    public Integer countAllFruitsByEexpiresInDays( String name, Integer expiresIn );
 }
