@@ -1,42 +1,56 @@
 package com.makketmail.fruitbasket;
 
-import java.util.List;
-
 public class FruitBasketApplication
 {
-    
-    public static void main(String[] args)
+    public static void main( String[] args )
     {
-        if (args.length <= 0)
+        if ( ( args.length <= 0 ) || ( null == args[ 0 ] ) || ( args[ 0 ].isEmpty() ) )
         {
-            System.out.println("Please provide a valid CSV file.\n");
-            System.out.println("E.g.");
-            System.out.println("java FruitBasketApplication basket.csv");
-            System.out.println("java FruitBasketApplication C:/test/basket.csv");
+            System.out.println( "Please provide a valid CSV file.\n" );
+            System.out.println( "E.g." );
+            System.out.println( "java FruitBasketApplication basket.csv" );
+            System.out.println( "java FruitBasketApplication C:/test/basket.csv" );
         }
         else
         {
-            String csvPath = args[0];
+            String csvPath = args[ 0 ];
+            FruitBasketService fruitBasketService = new CsvFruitBasketService( csvPath );
 
-            printSummary(csvPath);
+            FruitBasketApplication fruitBasketApplication = new FruitBasketApplication();
+            fruitBasketApplication.printSummary( fruitBasketService );
         }
     }
 
-    private static void printSummary(String csvPath)
+    public void printSummary( FruitBasketService fruitBasketService )
     {
-        FruitBasketService fruitBasketService = new CsvFruitBasketService(csvPath);
+        // Total number of fruit: 123
+        // Types of fruit: 7
+        // The number of each type of fruit in descending order
+        // The characteristics (size, color, shape, etc.) of each fruit by type
+        // Have any fruit been in the basket for over 3 days
+        int total = fruitBasketService.countAllFruits();
 
-        List<Fruit> fruits = fruitBasketService.findAllFruits();
+        System.out.println( "\nFRUIT BASKET SUMMARY" );
+        System.out.println( "==============================================" );
+        System.out.println( "Total number of fruit" );
+        System.out.println( "----------------------------------------------" );
+        System.out.println( total );
 
-        System.out.println("Total " + fruits.size() + " fruits found");
+        System.out.println( "\nTypes of fruit" );
+        System.out.println( "----------------------------------------------" );
+        System.out.println( "TODO" );
 
-        for (Fruit fruit : fruits)
-        {
-            System.out.println(fruit);
+        System.out.println( "\nThe number of each type of fruit in descending order" );
+        System.out.println( "----------------------------------------------" );
+        System.out.println( "TODO" );
 
-        }
+        System.out.println( "\nThe characteristics (size, color, shape, etc.) of each fruit by type" );
+        System.out.println( "----------------------------------------------" );
+        System.out.println( "TODO" );
 
-        int countOfFruits=fruitBasketService.countAllFruits();
-        System.out.println("Total number of fruits " + countOfFruits);
+        System.out.println( "\nHave any fruit been in the basket for over 3 days" );
+        System.out.println( "----------------------------------------------" );
+        System.out.println( "TODO" );
+        System.out.println( "==============================================" );
     }
 }
