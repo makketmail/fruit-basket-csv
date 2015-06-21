@@ -1,13 +1,15 @@
 package com.makketmail.fruitbasket;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-
-import com.makketmail.fruitbasket.util.ValueComparator;
 
 public class FruitBasketApplication
 {
@@ -100,7 +102,12 @@ public class FruitBasketApplication
             typeCountMap.put( fruitType, fruitBasketService.countAllFruitsByName( fruitType ) );
         }
 
-        Map sortedMap = sortByValue( typeCountMap );
+        for ( String key : typeCountMap.keySet() )
+        {
+            System.out.println( key + " : " + typeCountMap.get( key ) );
+        }
+        System.out.println( "++++++" );
+        Map sortedMap = sortByComparator( typeCountMap );
 
         for ( Object key : sortedMap.keySet() )
         {
@@ -109,10 +116,34 @@ public class FruitBasketApplication
 
     }
 
-    private Map< String, Integer > sortByValue( Map< String, Integer > typeCountMap )
+    private Map sortByComparator( Map< String, Integer > unsortMap )
     {
-        Map sortedMap = new TreeMap( new ValueComparator( typeCountMap ) );
-        sortedMap.putAll( typeCountMap );
+        // Convert Map to List
+        List< Map.Entry< String, Integer >> list = new LinkedList< Map.Entry< String, Integer >>( unsortMap.entrySet() );
+
+        // For ascending
+        // Collections.sort( list, new Comparator< Map.Entry< String, Integer...
+
+        // For descending
+        // Collections.sort( list, Collections.reverseOrder( new Comparator<
+        // Map.Entry< String, Integer...
+
+        // Sort list with comparator, to compare the Map values. Descending
+        Collections.sort( list, Collections.reverseOrder( new Comparator< Map.Entry< String, Integer >>()
+        {
+            public int compare( Map.Entry< String, Integer > o1, Map.Entry< String, Integer > o2 )
+            {
+                return ( o1.getValue() ).compareTo( o2.getValue() );
+            }
+        } ) );
+
+        // Convert sorted map back to a Map
+        Map< String, Integer > sortedMap = new LinkedHashMap< String, Integer >();
+        for ( Iterator< Map.Entry< String, Integer >> it = list.iterator(); it.hasNext(); )
+        {
+            Map.Entry< String, Integer > entry = it.next();
+            sortedMap.put( entry.getKey(), entry.getValue() );
+        }
         return sortedMap;
     }
 
