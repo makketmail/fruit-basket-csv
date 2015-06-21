@@ -1,7 +1,19 @@
 # Fruit Basket Application
 Fruit Basket Application Based on CSV file
 
-I) Build (Required Java 1.6 or later and Maven 3 or later)
+
+## Environment
+
+Purpose  | Tool
+------------- | -------------
+Language |Java 1.6
+Build Tool |Maven 3
+IDE |Eclipse
+Testing Framework |TestNG
+Source Control |GIT
+
+
+I) Build (Requires Java 1.6 or later and Maven 3 or later)
 --------------------------------------------
 ```
 mvn clean package -Dmaven.test.skip
@@ -9,7 +21,9 @@ mvn clean package -Dmaven.test.skip
 
 This command will generate fruit-basket.jar in target folder
 
-II) Run Application from command line (Required Java 1.6 or later)
+(I have already created this and copied to the build folder)
+
+II) Run Application from command line (Requires Java 1.6 or later)
 --------------------------------------------
 ```
 java -jar fruit-basket.jar basket.csv
@@ -21,7 +35,7 @@ Optionally you can provide inStore Days too (default is 3) as an argument. Which
 java FruitBasketApplication basket.csv 4
 ```
 
-III) Run Application with TestNG (Required Java 1.6 or later and Maven 3 or later)
+III) Run Application with TestNG (Requires Java 1.6 or later and Maven 3 or later)
 --------------------------------------------
 ```
 mvn clean compile test -DFruitBasketTest -Dcsv=C:/test/basket.csv
