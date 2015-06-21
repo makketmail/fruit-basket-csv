@@ -102,12 +102,7 @@ public class FruitBasketApplication
             typeCountMap.put( fruitType, fruitBasketService.countAllFruitsByName( fruitType ) );
         }
 
-        for ( String key : typeCountMap.keySet() )
-        {
-            System.out.println( key + " : " + typeCountMap.get( key ) );
-        }
-        System.out.println( "++++++" );
-        Map sortedMap = sortByComparator( typeCountMap );
+        Map< String, Integer > sortedMap = sortByComparator( typeCountMap );
 
         for ( Object key : sortedMap.keySet() )
         {
@@ -116,7 +111,7 @@ public class FruitBasketApplication
 
     }
 
-    private Map sortByComparator( Map< String, Integer > unsortMap )
+    private Map< String, Integer > sortByComparator( Map< String, Integer > unsortMap )
     {
         // Convert Map to List
         List< Map.Entry< String, Integer >> list = new LinkedList< Map.Entry< String, Integer >>( unsortMap.entrySet() );
@@ -220,6 +215,8 @@ public class FruitBasketApplication
         // Expected ourput
         // 4 oranges and 5 pineapples are over 3 days old
 
+        boolean isFruitsFound = false;
+
         // Get names
         Set< String > uniqueFruitNamesSet = fruitBasketService.findAllFruitsTypes();
 
@@ -230,7 +227,13 @@ public class FruitBasketApplication
             if ( count > 0 )
             {
                 System.out.println( count + " " + fruitName + " : " + inStoreDays + " days old" );
+                isFruitsFound = true;
             }
+        }
+
+        if ( !isFruitsFound )
+        {
+            System.out.println( "No fruits found which is " + inStoreDays + " days old" );
         }
     }
 }
