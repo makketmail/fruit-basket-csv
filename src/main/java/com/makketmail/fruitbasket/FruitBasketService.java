@@ -15,7 +15,7 @@ public interface FruitBasketService
 
     public Set< String > findAllFruitsTypes();
 
-    public List< Fruit > findAllFruitsByEexpiresInDays( String name, Integer expiresIn );
+    public List< Fruit > findAllFruitsByinStoreDays( String name, Integer istoreDays );
 
     public Integer countAllFruits();
 
@@ -23,5 +23,5 @@ public interface FruitBasketService
 
     public Integer countAllFruitsTypes();
 
-    public Integer countAllFruitsByEexpiresInDays( String name, Integer expiresIn );
+    public Integer countAllFruitsByinStoreDays( String name, Integer istoreDays );
 }

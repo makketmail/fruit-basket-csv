@@ -1,0 +1,21 @@
+fruit,days,characteristic1,characteristic2
+apple,1, red, sweet
+orange,2, round, sweet
+pineapple,5, prickly, sweet
+apple,4, yellow, sweet
+grapefruit,2, yellow, bitter
+watermelon,4, green, heavy
+orange,2, round, sweet
+orange,1, round, sweet
+pineapple,6, prickly, sweet
+apple,1, green, tart
+grapefruit,1,bitter,yellow
+,,,
+grapefruit,2, bitter, yellow
+watermelon,3, heavy, green
+orange,1, round, sweet
+orange,5, sweet, round
+,,,
+orange,6, round, sweet
+apple,1, red, sweet
+grapefruit,3, yellow, bitter

@@ -83,13 +83,13 @@ public class CsvFruitBasketService implements FruitBasketService
         return uniqueFruitNamesSet;
     }
 
-    public List< Fruit > findAllFruitsByEexpiresInDays( String name, Integer expiresIn )
+    public List< Fruit > findAllFruitsByinStoreDays( String name, Integer inStoreDays )
     {
         List< Fruit > availableFruits = readCSV();
         List< Fruit > requestedFruits = new ArrayList< Fruit >();
         for ( Fruit fruit : availableFruits )
         {
-            if ( fruit.getName().equalsIgnoreCase( name ) && fruit.getDays() <= expiresIn )
+            if ( fruit.getName().equalsIgnoreCase( name ) && fruit.getDays() <= inStoreDays )
             {
                 requestedFruits.add( fruit );
             }
@@ -113,9 +113,9 @@ public class CsvFruitBasketService implements FruitBasketService
         return findAllFruitsTypes().size();
     }
 
-    public Integer countAllFruitsByEexpiresInDays( String name, Integer expiresIn )
+    public Integer countAllFruitsByinStoreDays( String name, Integer inStoreDays )
     {
-        return findAllFruitsByEexpiresInDays( name, expiresIn ).size();
+        return findAllFruitsByinStoreDays( name, inStoreDays ).size();
     }
 
     private List< Fruit > readCSV()
@@ -154,7 +154,11 @@ public class CsvFruitBasketService implements FruitBasketService
         }
         catch ( Exception e )
         {
-            e.printStackTrace();
+            System.err
+                    .println( "Error reading CSV file ["
+                            + csvFilePath
+                            + "]. Please make sure the file header matches the format [fruit,days,characteristic1,characteristic2] and there is no empty lines. "
+                            + e.getMessage() );
         }
         finally
         {
