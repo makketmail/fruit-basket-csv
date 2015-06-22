@@ -209,11 +209,10 @@ public class FruitBasketApplication
 
     }
 
-    // Have any fruit been in the basket for over 3 days
+
     private void printFruitsByinStoreDays( FruitBasketService fruitBasketService, int inStoreDays )
     {
-        // Expected ourput
-        // 4 oranges and 5 pineapples are over 3 days old
+
 
         boolean isFruitsFound = false;
 

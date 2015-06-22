@@ -89,7 +89,7 @@ public class CsvFruitBasketService implements FruitBasketService
         List< Fruit > requestedFruits = new ArrayList< Fruit >();
         for ( Fruit fruit : availableFruits )
         {
-            if ( fruit.getName().equalsIgnoreCase( name ) && fruit.getDays() >= inStoreDays )
+            if ( fruit.getName().equalsIgnoreCase( name ) && fruit.getDays() > inStoreDays )
             {
                 requestedFruits.add( fruit );
             }
