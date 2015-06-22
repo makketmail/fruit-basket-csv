@@ -10,7 +10,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+/**
+ * Main Entry point through cmd
+ * 
+ * @author Anupama Bbaurajan
+ *
+ */
 public class FruitBasketApplication
 {
     public static void main( String[] args )
@@ -51,6 +56,11 @@ public class FruitBasketApplication
         }
     }
 
+    /**
+     * Prints the fruit basket summary
+     * @param fruitBasketService
+     * @param inStoreDays
+     */
     public void printSummary( FruitBasketService fruitBasketService, int inStoreDays )
     {
         System.out.println( "\nFRUIT BASKET SUMMARY" );

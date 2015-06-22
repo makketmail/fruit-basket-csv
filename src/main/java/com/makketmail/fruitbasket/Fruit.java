@@ -1,5 +1,11 @@
 package com.makketmail.fruitbasket;
 
+/**
+ * Represents one row of fruit data.
+ * 
+ * @author Anupama Bbaurajan
+ *
+ */
 public class Fruit
 {
     // name and type are same
