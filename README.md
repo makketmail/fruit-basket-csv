@@ -32,7 +32,7 @@ java -jar fruit-basket.jar basket.csv
 Optionally you can provide inStore Days too (default is 3) as an argument. Which will indicate how many days old the fruits are. For example to find fruit which are for over 4 days old
 
 ```
-java FruitBasketApplication basket.csv 4
+java -jar fruit-basket.jar basket.csv 4
 ```
 
 III) Run Application with TestNG (Requires Java 1.6 or later and Maven 3 or later)
